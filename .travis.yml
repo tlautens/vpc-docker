@@ -1,0 +1,11 @@
+language: ruby
+
+services:
+  - docker
+
+script:
+  docker build -t vpc-1 . 
+  
+deploy:
+  echo "$DOCKER_ACCESSTOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  docker push tlautens/vpc-docker-registry:vpc-1
