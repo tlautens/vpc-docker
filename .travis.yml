@@ -1,11 +1,13 @@
 language: ruby
 
 services:
-  - docker
+- docker
+
+before_install:
+ - echo "$DOCKER_ACCESSTOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin || exit 1
 
 script:
-  docker build -t vpc-1 . 
+  docker build -t vpc-1 .
 
 after_success:
-  echo "$DOCKER_ACCESSTOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  docker push tlautens/vpc-docker-registry:vpc-1
+  - docker push tlautens/vpc-docker-registry:vpc-1
