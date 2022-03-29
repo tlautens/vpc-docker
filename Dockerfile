@@ -1,4 +1,4 @@
-FROM registry.gitlab.inria.fr/comprise/voice_transformation/env
+FROM tlautens/vpc-docker-registry:vpc-env-base
 
 # install the latest upgrades
 RUN apt-get update && apt-get -y dist-upgrade
