@@ -1,4 +1,4 @@
-FROM kaldiasr/kaldi:gpu-latest
+FROM vpc-docker-registry:vpc-kaldi-cuda-ubuntu2004
 
 # install the latest upgrades
 RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install cmake python3 python3-pip python3-dev python3-numpy python3-scipy libsndfile1
