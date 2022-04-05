@@ -12,3 +12,5 @@ netcdf*/
 /env.sh
 /Miniconda*
 temp*/
+
+.DS_Store
